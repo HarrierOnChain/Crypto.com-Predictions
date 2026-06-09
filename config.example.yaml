@@ -1,0 +1,41 @@
+# Crypto.com Predictions Trading Bot — example config.
+# Copy to `config.yaml` and fill in. NEVER commit your real config.yaml.
+# Full engine + all 20+ venue adapters:
+#   https://github.com/HarrierOnChain/Prediction-Markets-Trading-Bot-Toolkits
+
+venue: crypto.com_predictions   # adapter selector
+enable_trading: false               # ALWAYS start in dry-run
+
+credentials:
+  # Uncomment the block that matches Crypto.com Predictions.
+
+  # On-chain venues (wallet auth):
+  # private_key: "0000000000000000000000000000000000000000000000000000000000000000"
+  # funder_address: "0x0000000000000000000000000000000000000000"
+
+  # Centralized / regulated venues (API auth):
+  # api_key: ""
+  # api_secret: ""
+
+risk:
+  circuit_breaker:
+    max_consecutive_large_trades: 5
+    window_seconds: 60
+    cooldown_seconds: 300
+  depth_guard:
+    min_orderbook_depth_usd: 250
+  trade_floor:
+    min_trade_size_usd: 5
+
+# Strategies available on Crypto.com Predictions. Toggle per your thesis.
+strategies:
+  btc_arbitrage:
+    enabled: true
+    windows: ["5m", "15m", "1h"]
+    min_edge_cents: 0.8
+
+  direction_hunting:
+    enabled: true
+    windows: ["5m", "15m"]
+    take_profit_cents: 3
+    stop_loss_cents: 3
