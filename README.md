@@ -50,7 +50,7 @@ This repo is the **Crypto.com Predictions** entry point. The execution core, ris
 | **Order execution** | < 100ms end-to-end |
 | **Event processing** | < 1ms per event |
 | **Safety** | Circuit breaker · depth guard · dry-run · trade floor |
-| **Venues** | Polymarket · Kalshi · Limitless live — 20+ on roadmap |
+| **Venues** | 7 live today · 20+ venues |
 
 Adding a venue means writing **one adapter** — not rebuilding a bot.
 
